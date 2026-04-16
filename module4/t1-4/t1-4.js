@@ -21,7 +21,19 @@ form.addEventListener('submit', async function(evt) {
     const h2 = document.createElement('h2');
     h2.innerText = item.show.name;
 
-    article.append(h2);
+    const a = document.createElement('a');
+    a.innerText = 'Open';
+    a.href = item.show.url;
+    a.target = '_blank';
+
+    const image = document.createElement('img');
+    image.src = item.show.image ? item.show.image.medium : 'https://placehold.co/210x295?text=No+Image';
+    image.alt = 'Image of tv show ' + item.show.name;
+
+    const div = document.createElement('div');
+    div.innerHTML = item.show.summary || 'No summary yet.';
+
+    article.append(h2, a, image, div);
     target.append(article);
   }
 });

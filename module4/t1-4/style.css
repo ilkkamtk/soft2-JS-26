@@ -1,0 +1,97 @@
+/* Base layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.45;
+  color: #1f2933;
+  background: #f5f7fa;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+#tv-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#tv-search input[type='text'] {
+  flex: 1 1 16rem;
+  min-width: 12rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #c8d1db;
+  border-radius: 0.45rem;
+}
+
+#tv-search input[type='submit'] {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #2f6ea8;
+  border-radius: 0.45rem;
+  background: #2f6ea8;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Result cards grid */
+#results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#results article {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 0.55rem;
+  padding: 0.9rem;
+  border: 1px solid #d6dde5;
+  border-radius: 0.6rem;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 8%);
+}
+
+#results h2 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+#results a {
+  justify-self: start;
+  text-decoration: none;
+  color: #0d5e9e;
+  font-weight: 600;
+}
+
+#results img {
+  width: 100%;
+  max-width: 210px;
+  border-radius: 0.4rem;
+  object-fit: cover;
+}
+
+#results article > div {
+  color: #364152;
+  font-size: 0.95rem;
+}
+
+#results article > div p {
+  margin: 0;
+}
+
+/* 3 cards side by side on larger screens */
+@media (min-width: 980px) {
+  #results {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
